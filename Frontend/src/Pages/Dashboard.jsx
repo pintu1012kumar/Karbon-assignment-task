@@ -98,9 +98,9 @@ export default function Dashboard() {
           </div>
 
           <div className="w-100  bg-gray-900 shadow rounded-lg p-4 mt-20 px-10 border border-gray-700 h-fit pb-10">
-            <h1 className="font-bold text-2xl pb-3 text-center">
-              Create New Note{" "}
-            </h1>
+             <h1 className="font-bold text-2xl text-center  bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent mb-4">
+                Create New Note
+              </h1>
             <input
               placeholder="Enter note title..."
               value={form.title}
