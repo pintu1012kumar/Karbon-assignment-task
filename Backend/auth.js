@@ -1,13 +1,21 @@
 import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
-import { PrismaClient } from "@prisma/client";
+import pkg from "@prisma/client";
 
+const { PrismaClient } = pkg;
 const prisma = new PrismaClient();
 
-passport.serializeUser((user, done) => done(null, user.id));
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
 passport.deserializeUser(async (id, done) => {
-  const user = await prisma.user.findUnique({ where: { id } });
-  done(null, user);
+  try {
+    const user = await prisma.user.findUnique({ where: { id } });
+    done(null, user);
+  } catch (err) {
+    done(err, null);
+  }
 });
 
 passport.use(
@@ -18,17 +26,25 @@ passport.use(
       callbackURL: "http://localhost:3000/auth/google/callback",
     },
     async (accessToken, refreshToken, profile, done) => {
-      let user = await prisma.user.findUnique({ where: { email: profile.emails[0].value } });
-      if (!user) {
-        user = await prisma.user.create({
-          data: {
-            email: profile.emails[0].value,
-            name: profile.displayName,
-            provider: "google",
-          },
+      try {
+        let user = await prisma.user.findUnique({
+          where: { email: profile.emails[0].value },
         });
+
+        if (!user) {
+          user = await prisma.user.create({
+            data: {
+              email: profile.emails[0].value,
+              name: profile.displayName,
+              provider: "google",
+            },
+          });
+        }
+
+        return done(null, user);
+      } catch (err) {
+        return done(err, null);
       }
-      return done(null, user);
     }
   )
 );
