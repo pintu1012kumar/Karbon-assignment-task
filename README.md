@@ -36,3 +36,7 @@ A simple web app to create, view, and delete your personal notes. Users can log 
 
 https://github.com/user-attachments/assets/1458f2d2-4797-4d03-a2d3-4dff558011e5
 
+## Explaination
+
+https://github.com/user-attachments/assets/f850bce1-367c-49c3-aca8-a19ac5d1053d
+
