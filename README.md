@@ -32,6 +32,7 @@ A simple web app to create, view, and delete your personal notes. Users can log 
    npm run dev
 --------------
 
+## Demo video
 
-
+https://github.com/user-attachments/assets/1458f2d2-4797-4d03-a2d3-4dff558011e5
 
