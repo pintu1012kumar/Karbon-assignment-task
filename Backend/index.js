@@ -4,7 +4,7 @@ import passport from "passport";
 import cors from "cors";
 import dotenv from "dotenv";
 import pkg from "@prisma/client";
-import "./auth.js"; // Passport strategy config
+import "./auth.js";
 
 dotenv.config();
 const { PrismaClient } = pkg;
@@ -43,7 +43,7 @@ app.get("/auth/google", passport.authenticate("google", { scope: ["profile", "em
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", { failureRedirect: "http://localhost:5173/login" }),
-  (req, res) => {
+  (res) => {
     res.redirect("http://localhost:5173/dashboard");
   }
 );
@@ -84,4 +84,4 @@ app.delete("/notes/:id", async (req, res) => {
   res.json({ message: "Note deleted" });
 });
 
-app.listen(3000, () => console.log("✅ Server running on http://localhost:3000"));
+app.listen(3000, () => console.log("Server running on http://localhost:3000"));

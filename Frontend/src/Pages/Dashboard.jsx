@@ -52,7 +52,6 @@ export default function Dashboard() {
     return (
       <div className="bg-gradient-to-br from-gray-900 via-black to-gray-800 min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
           <p className="text-gray-300 text-lg">Loading your notes...</p>
         </div>
       </div>
@@ -69,7 +68,6 @@ export default function Dashboard() {
               <h1 className="font-bold text-4xl lg:text-5xl pb-3 mt-5 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Your Notes Collection
               </h1>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto rounded-full"></div>
             </div>
 
             {notes.length === 0 ? (
@@ -128,7 +126,6 @@ export default function Dashboard() {
               <h1 className="font-bold text-2xl bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent mb-2">
                 Create New Note
               </h1>
-              <div className="w-16 h-0.5 bg-gradient-to-r from-green-400 to-blue-500 mx-auto rounded-full"></div>
             </div>
 
             <div className="space-y-4">
