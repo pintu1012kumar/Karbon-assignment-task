@@ -24,13 +24,12 @@ A simple web app to create, view, and delete your personal notes. Users can log 
    npm install
    
    .env file
-DATABASE_URL=your_postgres_url
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-NEXTAUTH_SECRET=your_nextauth_secret
-
-npm run dev
-
+   DATABASE_URL=your_postgres_url
+   GOOGLE_CLIENT_ID=your_google_client_id
+   GOOGLE_CLIENT_SECRET=your_google_client_secret
+   NEXTAUTH_SECRET=your_nextauth_secret
+   
+   npm run dev
 --------------
 
 
